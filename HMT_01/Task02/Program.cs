@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Задание 2
+ * Программа должна выводить пользователю промежуточные вычисления 
+ * (например, a, b, c и дискриминант (если вычисляли при помощи него) и корни (если есть))
+ */ 
 
 namespace Task02
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Solver s = new Solver();
+
+            for (;;)
+            {
+                s.ShowDialog();
+            }
         }
     }
 }
