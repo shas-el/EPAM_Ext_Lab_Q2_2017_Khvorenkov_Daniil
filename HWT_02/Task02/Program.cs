@@ -7,15 +7,20 @@
  * ****
  */
 
+using System.Text;
+
 namespace Task02
 {
     using System;
 
-    public class Program
+    public class Program //todo pn даже пирамидки нарисовал в формулировке))
     {
         public static void Main(string[] args)
         {
-            int n;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			int n;
             string input;
             Console.Write("Введите количество строк: ");
             input = Console.ReadLine();

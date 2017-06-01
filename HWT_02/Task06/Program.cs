@@ -4,6 +4,8 @@
  * которая позволяет назначать и удалять текстовой надписи выделение
  */
 
+using System.Text;
+
 namespace Task06
 {
     using System;
@@ -20,12 +22,15 @@ namespace Task06
 
         public static void Main(string[] args)
         {
-            int state = 0;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			int state = 0;
             string stateString = "default";
 
             for (;;)
             {
-                switch (state)
+                switch (state) //todo pn не самое оптимальное решение. Если добавится ещё выделение цветом? сколько будет веток у switch? Лучше уж флажки добавить на каждый стиль или просто дополнять строку выбранным стилем.
                 {
                     case 0:
                         stateString = "None";

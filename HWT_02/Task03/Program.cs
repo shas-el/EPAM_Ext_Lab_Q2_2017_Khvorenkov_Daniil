@@ -16,7 +16,10 @@ namespace Task03
     {
         public static void Main(string[] args)
         {
-            int n;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			int n;
             string input;
             Console.Write("Введите количество строк: ");
             input = Console.ReadLine();
@@ -31,8 +34,8 @@ namespace Task03
             for (int i = 0; i < n; i++)
             {
                 StringBuilder sb = new StringBuilder((n * 2) + 1);
-                string whiteSpace = new string(' ', n - i);
-                string s = new string('*', (i * 2) + 1);
+                string whiteSpace = new string(' ', n - i);//todo не понял идеи с выделением переменных whiteSpace и s. Сразу бы лучше в StringBuilder добавил.
+				string s = new string('*', (i * 2) + 1);
                 Console.WriteLine(sb.Append(whiteSpace).Append(s));
             }
 

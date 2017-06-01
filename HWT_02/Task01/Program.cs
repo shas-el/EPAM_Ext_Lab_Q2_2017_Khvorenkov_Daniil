@@ -4,7 +4,9 @@
  * (отрицательные,  или  0),  должно  выдаваться  сообщение  об  ошибке. 
  * Возможность ввода пользователем строки вида «абвгд», или нецелых
  * чисел игнорировать.
- */  
+ */
+
+using System.Text;
 
 namespace Task01
 {
@@ -14,7 +16,10 @@ namespace Task01
     {
         public static void Main(string[] args)
         {
-            string input;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			string input;
             int a;
             int b;
             Console.Write("Введите a: ");

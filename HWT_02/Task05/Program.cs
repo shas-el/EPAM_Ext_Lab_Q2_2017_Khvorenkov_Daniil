@@ -4,15 +4,20 @@
  * программу, которая выводит на экран сумму всех чисел меньше 1000, кратных 3, или 5. 
  */
 
+using System.Text;
+
 namespace Task05
 {
     using System;
 
-    public class Program
+    public class Program//todo pn ответ неправильный, правильный ответ 233168
     {
         public static void Main(string[] args)
         {
-            int sum = 0;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			int sum = 0;
             int max = 1000;
             int firstNumber = 3;
             int secondNmber = 5;
