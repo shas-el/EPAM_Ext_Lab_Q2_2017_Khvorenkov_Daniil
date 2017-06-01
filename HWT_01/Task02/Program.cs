@@ -6,10 +6,16 @@
 
 namespace Task02
 {
-    public class Program
+	using System;
+	using System.Text;
+
+	public class Program
     {
         public static void Main(string[] args)
         {
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
             Solver s = new Solver();
 
             for (;;)

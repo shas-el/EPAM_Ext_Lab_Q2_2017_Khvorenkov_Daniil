@@ -18,7 +18,7 @@ namespace Task02
         {
             h = this.AskForH("h");
             a = this.CalculateA(h);
-            Console.Write("a = " + a);
+            Console.Write("a = " + a);//todo pn здесь лучше билдить всё в строку и один раз в конце метода вывести в консоль (побыстрее будет).
             b = this.CalculateB(h, a);
             Console.Write(", b = " + b);
             c = this.CalculateC(h, a, b);
