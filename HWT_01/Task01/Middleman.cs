@@ -15,6 +15,7 @@ namespace Task01
         /// </summary>
         public void ShowDialog()
         {
+
             string input;
             double x;
             double y;

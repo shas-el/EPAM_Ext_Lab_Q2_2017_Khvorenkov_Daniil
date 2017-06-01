@@ -7,10 +7,16 @@
 
 namespace Task01
 {
-    public class Program
+	using System;
+	using System.Text;
+
+	public class Program
     {
         public static void Main(string[] args)
         {
+			Console.InputEncoding = Encoding.Unicode;//todo pn без явного задания кодировки будет использована кодировка по умолчанию. Машина, на которой я проверяю настроена на английскую культуру, поэтому кириллические символы отображаются в ней как знаки вопроса. Следует учитывать такое специфичное поведение консоли в следующих заданиях :)/
+			Console.OutputEncoding = Encoding.Unicode;
+
             Middleman middleman = new Middleman();
             for (;;)
             {
