@@ -26,8 +26,9 @@ namespace Task06
             Console.OutputEncoding = Encoding.Unicode;
 
             int state = 0;
+	        string stateString;
 
-            for (;;)
+			for (;;)
             {
                 switch (state) //todo pn не самое оптимальное решение. Если добавится ещё выделение цветом? сколько будет веток у switch? Лучше уж флажки добавить на каждый стиль или просто дополнять строку выбранным стилем.
                 {
