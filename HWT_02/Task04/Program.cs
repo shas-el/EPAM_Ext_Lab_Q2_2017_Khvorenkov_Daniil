@@ -19,6 +19,9 @@ namespace Task04
     {
         public static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+
             int n;
             string input;
             Console.Write("Введите количество треугольников: ");

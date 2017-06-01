@@ -4,21 +4,23 @@
  * (отрицательные,  или  0),  должно  выдаваться  сообщение  об  ошибке. 
  * Возможность ввода пользователем строки вида «абвгд», или нецелых
  * чисел игнорировать.
- */  
+ */
 
 namespace Task01
 {
     using System;
-
+    using System.Text;
     public class Program
     {
         public static void Main(string[] args)
         {
-            string input;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+
             int a;
             int b;
             Console.Write("Введите a: ");
-            input = Console.ReadLine();
+            var input = Console.ReadLine();
 
             while (!(int.TryParse(input, out a) && a > 0))
             {
