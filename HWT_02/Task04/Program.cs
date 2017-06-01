@@ -39,9 +39,7 @@ namespace Task04
                 for (int j = 0; j < i; j++)
                 {
                     StringBuilder sb = new StringBuilder((i * 2) + 1);
-                    string whiteSpace = new string(' ', n - j);
-                    string s = new string('*', (j * 2) + 1);
-                    Console.WriteLine(sb.Append(whiteSpace).Append(s));
+                    Console.WriteLine(sb.Append(' ', n - j).Append('*', (j * 2) + 1));
                 }
             }
 

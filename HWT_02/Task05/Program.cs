@@ -4,7 +4,6 @@
  * программу, которая выводит на экран сумму всех чисел меньше 1000, кратных 3, или 5. 
  */
 
-
 namespace Task05
 {
     using System;
@@ -20,16 +19,14 @@ namespace Task05
             int sum = 0;
             int max = 1000;
             int firstNumber = 3;
-            int secondNmber = 5;
+            int secondNumber = 5;
 
-            for (int i = firstNumber; i < max; i += firstNumber)
+            for (int i = 0; i < max; i++)
             {
-                sum += i;
-            }
-
-            for (int i = secondNmber; i < max; i += secondNmber)
-            {
-                sum += i;
+                if ((i % firstNumber == 0) || (i % secondNumber == 0))
+                {
+                    sum += i;
+                }
             }
 
             Console.WriteLine("Сумма наутральных чисел меньше {0} и кратных 3 или 5 равна {1}", max, sum);
