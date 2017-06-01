@@ -12,15 +12,16 @@ using System.Text;
 namespace Task02
 {
     using System;
+    using System.Text;
 
     public class Program //todo pn даже пирамидки нарисовал в формулировке))
     {
         public static void Main(string[] args)
         {
-	        Console.InputEncoding = Encoding.Unicode;
-	        Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
 
-			int n;
+            int n;
             string input;
             Console.Write("Введите количество строк: ");
             input = Console.ReadLine();

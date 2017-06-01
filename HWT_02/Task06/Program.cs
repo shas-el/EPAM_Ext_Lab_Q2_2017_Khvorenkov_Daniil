@@ -4,11 +4,11 @@
  * которая позволяет назначать и удалять текстовой надписи выделение
  */
 
-using System.Text;
 
 namespace Task06
 {
     using System;
+    using System.Text;
 
     public class Program
     {
@@ -22,11 +22,10 @@ namespace Task06
 
         public static void Main(string[] args)
         {
-	        Console.InputEncoding = Encoding.Unicode;
-	        Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
 
-			int state = 0;
-            string stateString = "default";
+            int state = 0;
 
             for (;;)
             {
@@ -77,8 +76,6 @@ namespace Task06
                         break;
                     case "4":
                         state = state & (int)State.None;
-                        break;
-                    default:
                         break;
                 }
             }

@@ -11,19 +11,18 @@ using System.Text;
 namespace Task01
 {
     using System;
-
+    using System.Text;
     public class Program
     {
         public static void Main(string[] args)
         {
-	        Console.InputEncoding = Encoding.Unicode;
-	        Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
 
-			string input;
             int a;
             int b;
             Console.Write("Введите a: ");
-            input = Console.ReadLine();
+            var input = Console.ReadLine();
 
             while (!(int.TryParse(input, out a) && a > 0))
             {
