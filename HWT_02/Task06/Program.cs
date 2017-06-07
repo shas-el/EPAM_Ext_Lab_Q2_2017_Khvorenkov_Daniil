@@ -19,8 +19,8 @@ namespace Task06
 
             bool[] state = new bool[3];
 
-            for (;;)
-            {
+            for (;;)//todo pn как пользователю выйти программно из консоли? он может бояться нажать на крестик.
+			{
                 StringBuilder builder = new StringBuilder();
 
                 if (state[0])
