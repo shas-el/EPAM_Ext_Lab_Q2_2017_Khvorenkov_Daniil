@@ -18,7 +18,7 @@ namespace Task01
         {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-            MyArray array = new MyArray(10);
+            MyArray array = new MyArray(10);//todo pn показал бы хоть, что в нем лежит до сортировки
             Console.WriteLine("Максимальное значение в массиве: {0}", array.Max());
             Console.WriteLine("Минимальное значение в массиве: {0}", array.Min());
             array.Sort();
