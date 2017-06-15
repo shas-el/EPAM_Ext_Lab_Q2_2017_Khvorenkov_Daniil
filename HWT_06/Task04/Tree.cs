@@ -6,7 +6,7 @@ namespace Task04
 {
     using System;
 
-    class Tree : IGameObject
+    class Tree : IGameObject//todo pn ты выделил базовый класс для бонусов и для монстров, а для препятствий?
     {
         public string Output
         {

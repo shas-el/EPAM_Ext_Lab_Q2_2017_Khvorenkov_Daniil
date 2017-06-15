@@ -1,12 +1,11 @@
-﻿/*
- * Круг с коориданатами центра, радиусом, площадью и длиной описывающей окружности.
- */
-
-namespace Task02
+﻿namespace Task02
 {
     using System;
 
-    public class Disc
+	/// <summary>
+	/// Круг с коориданатами центра, радиусом, площадью и длиной описывающей окружности.
+	/// </summary>
+	public class Disc//todo pn если хочешь подписывать классы, делай это через summary
     {
         private double x = 0;
         private double y = 0;
