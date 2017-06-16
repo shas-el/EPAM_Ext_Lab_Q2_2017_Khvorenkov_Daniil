@@ -7,6 +7,6 @@ namespace Task04
     interface ILocatable
     {
         int X { get; set; }
-        double Y { get; set; }
+        int Y { get; set; }
     }
 }

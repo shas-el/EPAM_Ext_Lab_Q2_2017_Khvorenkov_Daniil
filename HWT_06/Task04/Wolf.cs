@@ -1,5 +1,5 @@
 ﻿/*
- * Волк – вид монстра
+ * Волк – вид монстра, может прыгать.
  */
 
 namespace Task04
@@ -8,53 +8,22 @@ namespace Task04
 
     class Wolf : Monster
     {
-        public override string Output
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public override string Output { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override int X { get; set; }
 
-        public override int X
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public override double Y
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override int Y { get; set; }
 
         public override void Attack(Player p)
         {
-            throw new NotImplementedException();
         }
 
         public override void Move(int x, int y)
         {
-            throw new NotImplementedException();
+        }
+
+        public void Jump(int x, int y)
+        {
         }
     }
 }
