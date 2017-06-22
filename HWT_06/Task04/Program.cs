@@ -35,6 +35,7 @@ namespace Task04
             {
                 field.Tiles[go.X, go.Y].GameObject = go;
             }
+
         }
     }
 }
