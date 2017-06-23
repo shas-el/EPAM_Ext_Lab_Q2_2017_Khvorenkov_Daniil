@@ -4,47 +4,12 @@
 
 namespace Task04
 {
-    using System;
-
     class Rock : IGameObject
     {
-        public string Output
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public string Output { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int X { get; set; }
 
-        public int X
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public double Y
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public int Y { get; set; }
     }
 }

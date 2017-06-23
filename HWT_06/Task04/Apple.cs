@@ -8,56 +8,12 @@ namespace Task04
 
     class Apple : Bonus
     {
-        public override string Output
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public override string Output { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override BonusType PowerUp { get; set; }
 
-        public override BonusType PowerUp
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public override int X { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public override int X
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public override double Y
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override int Y { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Task04
         public enum BonusType { }
         public abstract string Output { get; set; }
         public abstract int X { get; set; }
-        public abstract double Y { get; set; }
+        public abstract int Y { get; set; }
         public abstract BonusType PowerUp { get; set; }
     }
 }
