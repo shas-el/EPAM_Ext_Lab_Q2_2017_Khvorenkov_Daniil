@@ -8,6 +8,7 @@
     public class MyDynamicArray<T> : IEnumerable<T>, IEnumerator<T>
     {
         private int position = -1;
+        private const int expansion = 1000;
 
         public MyDynamicArray()
         {
@@ -16,7 +17,14 @@
 
         public MyDynamicArray(int i)
         {
-            Array = new T[i];
+            if (i > 0)
+            {
+                Array = new T[i];
+            }
+            else
+            {
+                Array = new T[8];
+            }
         }
 
         public MyDynamicArray(IEnumerable<T> collection)
@@ -95,7 +103,7 @@
 
                 while (cap < collection.Count() + Length)
                 {
-                    cap = cap * 2;
+                    cap += expansion;
                 }
 
                 Expand(cap);
@@ -136,7 +144,8 @@
 
             if (Length == cap)
             {
-                cap = cap * 2;//todo pn 1. хардкод. 2. не очень хорошо. Представь, что в массие 1млн записей, а ты хочешь добавить 10. Для чего так много добавляеть. Лучше в константу вынеси какое-то значение (1000 например).
+                cap += expansion;//todo pn 1. хардкод. 2. не очень хорошо. Представь, что в массие 1млн записей, а ты хочешь добавить 10. Для чего так много добавляеть. Лучше в константу вынеси какое-то значение (1000 например).
+                //Что если элементов 8 и добавляется 9? И таких массивов 100,000? В лекции у динамического массива занимаемая память была указана как следующая степень 2. Я решил, что это общепринятое решение.
             }
 
             var temp1 = Array.Take(index).ToArray();

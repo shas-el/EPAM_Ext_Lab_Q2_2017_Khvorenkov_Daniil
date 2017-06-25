@@ -32,7 +32,7 @@ namespace Task01
 
             set
             {
-                if (value >= 0)//todo pn стаж не может быть больше возраста
+                if (value >= 0 && value < Age)//todo pn стаж не может быть больше возраста
                 {
                     daysWorked = value;
                 }
