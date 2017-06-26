@@ -35,10 +35,10 @@
         {
             if (person != null)
             {
-                if (time < 12)
+                if (time < 12)//todo pn хардкод
                 {
-                    Console.WriteLine("Good morning, {0}! - said {1}", person.FirstName, this.FirstName);
-                }
+                    Console.WriteLine("Good morning, {0}! - said {1}", person.FirstName, this.FirstName);//todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
+				}
 
                 if (time >= 12 && time < 17)
                 {

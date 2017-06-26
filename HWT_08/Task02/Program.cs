@@ -16,7 +16,7 @@ namespace Task02
 
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)//todo pn а теперь посмотри ниже и подумай, удобно ли читать 20 слитых вместе строк кода?
         {
             Office office = new Office("Nice Office");
             Person john = new Person("John");
