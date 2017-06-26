@@ -19,18 +19,25 @@ namespace Task02
         public static void Main(string[] args)//todo pn а теперь посмотри ниже и подумай, удобно ли читать 20 слитых вместе строк кода?
         {
             Office office = new Office("Nice Office");
+
+            Listener listener = new Listener(office);
+
             Person john = new Person("John");
-            john.Entered += office.GreetByOffice;
-            john.Quit += office.GoodbyeByOffice;
+            john.Entered += listener.HandleEntered;
+            john.Quit += listener.HandleQuit;
+
             Person bob = new Person("Bob");
-            bob.Entered += office.GreetByOffice;
-            bob.Quit += office.GoodbyeByOffice;
+            bob.Entered += listener.HandleEntered;
+            bob.Quit += listener.HandleQuit;
+
             Person george = new Person("George");
-            george.Entered += office.GreetByOffice;
-            george.Quit += office.GoodbyeByOffice;
+            george.Entered += listener.HandleEntered;
+            george.Quit += listener.HandleQuit;
+
             Person benny = new Person("Benny");
-            benny.Entered += office.GreetByOffice;
-            benny.Quit += office.GoodbyeByOffice;
+            benny.Entered += listener.HandleEntered;
+            benny.Quit += listener.HandleQuit;
+
             john.EnterRoom(office, 10);
             bob.EnterRoom(office, 11);
             george.EnterRoom(office, 14);
@@ -38,7 +45,8 @@ namespace Task02
             benny.EnterRoom(office, 17);
             john.QuitRoom(office, 17);
             george.QuitRoom(office, 18);
-            benny.QuitRoom(office, 18);            
+            benny.QuitRoom(office, 18);           
+             
             Console.ReadKey();
         }
     }

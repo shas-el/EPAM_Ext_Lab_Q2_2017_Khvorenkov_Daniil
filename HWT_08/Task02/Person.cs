@@ -2,9 +2,13 @@
 {
     using System;
 
+    public delegate void SaySomething(string message);
+
     public class Person
     {
         private string firstName;
+        private const int noon = 12;
+        private const int evening = 17;
 
         public Person(string firstName)
         {
@@ -31,32 +35,32 @@
             }
         }
 
-        public void Greet(Person person, int time)
+        public void Greet(Person person, int time, SaySomething outFunc)
         {
             if (person != null)
             {
-                if (time < 12)//todo pn хардкод
+                if (time < noon)//todo pn хардкод
                 {
-                    Console.WriteLine("Good morning, {0}! - said {1}", person.FirstName, this.FirstName);//todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
+                    outFunc(string.Format("Good morning, {0}! - said {1}", person.FirstName, this.FirstName));//todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
 				}
 
-                if (time >= 12 && time < 17)
+                if (time >= noon && time < evening)
                 {
-                    Console.WriteLine("Good day, {0}! - said {1}", person.FirstName, this.FirstName);
+                    outFunc(string.Format("Good day, {0}! - said {1}", person.FirstName, this.FirstName));
                 }
 
-                if (time >= 17)
+                if (time >= evening)
                 {
-                    Console.WriteLine("Good evening, {0}! - said {1}", person.FirstName, this.FirstName);
+                    outFunc(string.Format("Good evening, {0}! - said {1}", person.FirstName, this.FirstName));
                 }
             }
         }
 
-        public void SayGoodbye(Person person)
+        public void SayGoodbye(Person person, SaySomething outFunc)
         {
             if (person != null)
             {
-                Console.WriteLine("Goodbye, {0}! - said {1}", person.FirstName, this.FirstName);
+               outFunc(string.Format("Goodbye, {0}! - said {1}", person.FirstName, this.FirstName));
             }
         }
 
@@ -64,7 +68,6 @@
         {
             if (room != null)
             {
-                Console.WriteLine("\n[{0} came to {1}]", FirstName, room.Name);
                 OnEntered(new PersonEventArgs(time, this));
                 room.AddPerson(this, time);
             }
@@ -80,7 +83,6 @@
             if (room != null && room.People.Contains(this))
             {
                 room.RemovePerson(this);
-                Console.WriteLine("\n[{0} left {1}]", FirstName, room.Name);
                 OnQuit(new PersonEventArgs(time, this));
             }
         }

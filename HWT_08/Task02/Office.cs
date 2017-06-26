@@ -4,9 +4,9 @@
 
     public class Office : IRoom
     {
-        public delegate void SayHello(Person person, int time);
+        public delegate void SayHello(Person person, int time, SaySomething outFunc);
         public SayHello Greetings;
-        public delegate void SayGoodbye(Person person);
+        public delegate void SayGoodbye(Person person, SaySomething outFunc);
         public SayGoodbye Goodbyes;
 
         public Office(string name)
@@ -37,16 +37,6 @@
                 Greetings -= person.Greet;
                 Goodbyes -= person.SayGoodbye;
             }
-        }
-
-        public void GreetByOffice(object sender, PersonEventArgs e)
-        {
-            Greetings?.Invoke(e.Person, e.Time);
-        }
-
-        public void GoodbyeByOffice(object sender, PersonEventArgs e)
-        {
-            Goodbyes?.Invoke(e.Person);
         }
     }
 }
