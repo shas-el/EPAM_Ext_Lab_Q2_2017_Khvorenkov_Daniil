@@ -33,6 +33,7 @@ namespace Task03
             Console.WriteLine("Anonymous function search median: {0}", tester.TestAnonymous(iterationsNumber));
             Console.WriteLine("Lambda-function search median: {0}", tester.TestLambda(iterationsNumber));
             Console.WriteLine("LINQ search median: {0}", tester.TestLinq(iterationsNumber));
+            Console.WriteLine("LINQ SELECT search median: {0}", tester.TestSelectLinq(iterationsNumber));
 
             Console.ReadKey();
         }

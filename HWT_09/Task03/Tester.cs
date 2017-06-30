@@ -84,5 +84,18 @@
             results = results.OrderBy(i => i).ToArray();
             return results[iterationsNumber / 2];
         }
+
+        public long TestSelectLinq(int iterationsNumber)
+        {
+            long[] results = new long[iterationsNumber];
+
+            for (int i = 0; i < iterationsNumber; i++)
+            {
+                results[i] = Test.LinqSelectSearch(Array);
+            }
+
+            results = results.OrderBy(i => i).ToArray();
+            return results[iterationsNumber / 2];
+        }
     }
 }

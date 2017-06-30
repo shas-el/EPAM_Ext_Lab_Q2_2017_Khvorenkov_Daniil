@@ -57,5 +57,16 @@
             sw.Stop();
             return sw.ElapsedTicks;
         }
+
+        public long LinqSelectSearch(int[] array)
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            int naturalNumbers = array.Select(x => x >= 0).Count();
+
+            sw.Stop();
+            return sw.ElapsedTicks;
+        }
     }
 }
