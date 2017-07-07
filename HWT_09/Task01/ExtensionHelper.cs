@@ -2,7 +2,7 @@
 {
     public static class ExtensionHelper
     {
-        public static int Sum(this int[] array)
+        public static int Sum(this int[] array)//todo pn а мы обобщенные типы не проходили чтоли?
         {
             var sum = 0;
 

@@ -18,8 +18,8 @@ namespace Task02
 
                 if (input.IsNaturalNumber())
                 {
-                    Console.WriteLine("{0} is a natural number", input);
-                }
+                    Console.WriteLine("{0} is a natural number", input);//todo pn "является ли строка положительным целым числом" в каком месте ты увидел "натуральное число"?
+				}
                 else
                 {
                     Console.WriteLine("{0} isn't a natural number", input);
