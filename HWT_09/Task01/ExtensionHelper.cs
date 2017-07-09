@@ -4,7 +4,7 @@
 
     public static class ExtensionHelper
     {
-        public static int Sum(this IEnumerable<int> array)//todo pn а мы обобщенные типы не проходили чтоли?
+        public static int Sum(this IEnumerable<int> array)//todo pn а мы обобщенные типы не проходили чтоли?                                                     
         {
             var sum = 0;
 
@@ -25,9 +25,9 @@
 
             if (array != null)
             {
-                foreach (int i in array)
+                foreach (double d in array)
                 {
-                    sum += i;
+                    sum += d;
                 }
             }
 
