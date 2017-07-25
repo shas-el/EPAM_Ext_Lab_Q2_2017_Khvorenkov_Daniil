@@ -172,7 +172,7 @@ From Northwind.Orders
 --В результатах запроса надо высвечивать две колонки c названиями Year и Total.
 --Написать проверочный запрос, который вычисляет количество всех заказов.
 
-Select YEAR(ShippedDate) as 'Year'
+Select YEAR(ShippedDate) as 'Year' -- не совсем корректно, поскольку ShippedDate проставлена не для всех заказов
 ,COUNT(*) as 'Total'
 From Northwind.Orders
 Group by YEAR(ShippedDate)
@@ -448,7 +448,7 @@ Exec Northwind.ShippedOrdersDiff
 --и рекомендованный Microsoft для решения подобного типа задач. Продемонстрировать использование процедуры.
 
 --Не получилось вывести c PRINT
-Exec Northwind.SubordinationInfo 2
+Exec Northwind.SubordinationInfo 2 -- попробуй все-таки реализовать с PRINT
 
 
 --13.4
