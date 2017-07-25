@@ -1,4 +1,4 @@
---13.1
+﻿--13.1
 If OBJECT_ID('Northwind.GreatestOrders', 'p') is not null
     Drop procedure Northwind.GreatestOrders;
 Go
@@ -67,7 +67,9 @@ If OBJECT_ID('Northwind.SubordinationInfo', 'p') is not null
     Drop procedure Northwind.SubordinationInfo;
 Go
 
-Create procedure Northwind.SubordinationInfo @empID int
+Create procedure Northwind.SubordinationInfo @empID int -- посмотри по этим ссылкам https://docs.microsoft.com/ru-ru/sql/relational-databases/hierarchical-data-sql-server
+																				-- https://stackoverflow.com/questions/18106947/cte-recursion-to-get-tree-hierarchy
+																--задача сгенерировать запрос, который будет возвращать древовидную структуру иерархии, а в конце его распечатать
 AS
 Begin
 With Reports (ManagerID, SubordinateID, Level, Indent)
