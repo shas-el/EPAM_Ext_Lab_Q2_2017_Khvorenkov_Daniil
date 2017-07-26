@@ -102,10 +102,19 @@
                 connection.ConnectionString = connectionString;
                 connection.Open();
 
+                const int ID = 11077;
+
                 var command = connection.CreateCommand();
                 command.CommandText = "Delete From Northwind.Orders" +
-                    " Where OrderID > 11077";//todo pn лучше не хардкодить в запросах по тем же причинам, почему не нужно вообще хардкодить.
+                    " Where OrderID > @LastID";//todo pn лучше не хардкодить в запросах по тем же причинам, почему не нужно вообще хардкодить.
                 command.CommandType = CommandType.Text;
+
+                var lastID = command.CreateParameter();
+                lastID.DbType = DbType.Int32;
+                lastID.ParameterName = "@LastID";
+                lastID.Value = ID;
+                command.Parameters.Add(lastID);
+
                 command.ExecuteNonQuery();
 
                 connection.Close();

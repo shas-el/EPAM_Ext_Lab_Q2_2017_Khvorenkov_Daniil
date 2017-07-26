@@ -45,6 +45,7 @@
     <Compile Include="Model\CustomerOrderHistoryDetail.cs" />
     <Compile Include="Model\OrderInfo.cs" />
     <Compile Include="Model\OrderInfoDetail.cs" />
+    <Compile Include="Model\OrderStatusEnum.cs" />
     <Compile Include="OrderDAL.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

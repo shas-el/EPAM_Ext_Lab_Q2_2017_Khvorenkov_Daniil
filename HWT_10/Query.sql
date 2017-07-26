@@ -172,10 +172,10 @@ From Northwind.Orders
 --В результатах запроса надо высвечивать две колонки c названиями Year и Total.
 --Написать проверочный запрос, который вычисляет количество всех заказов.
 
-Select YEAR(ShippedDate) as 'Year' -- не совсем корректно, поскольку ShippedDate проставлена не для всех заказов
+Select YEAR(OrderDate) as 'Year' -- не совсем корректно, поскольку ShippedDate проставлена не для всех заказов
 ,COUNT(*) as 'Total'
 From Northwind.Orders
-Group by YEAR(ShippedDate)
+Group by YEAR(OrderDate)
 
 --Проверочный запрос
 
