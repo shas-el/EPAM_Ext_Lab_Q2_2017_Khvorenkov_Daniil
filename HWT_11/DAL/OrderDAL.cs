@@ -24,7 +24,7 @@
                 connection.Open();
 
                 var command = connection.CreateCommand();
-                command.CommandText = "Select * From Northwind.Orders";
+                command.CommandText = "Select * From Northwind.Orders";//todo pn нехорошо писать звездочку, потому что всегда таблица может измениться и мы долго будем искать, где у нас упало. Лучше перечислить все столбцы руками. Так будет безопаснее.
                 command.CommandType = CommandType.Text;
 
                 using (IDataReader reader = command.ExecuteReader())
@@ -111,7 +111,7 @@
                     " On od.ProductID = p.ProductID" +
                     " Where o.OrderID = @orderID";
                 var orderID = command.CreateParameter();
-                orderID.ParameterName = "@orderID";
+                orderID.ParameterName = "@orderID";//todo pn .AddWithValue не нравится?
                 orderID.DbType = DbType.Int32;
                 orderID.Value = order.OrderID;
                 command.Parameters.Add(orderID);
@@ -307,8 +307,8 @@
                         detail.Discount = (int)reader["Discount"];
                         detail.Quantity = (Int16)reader["Quantity"];
                         detail.ExtendedPrice =
-                            detail.UnitPrice * (decimal)((100 - detail.Discount) / 100) * detail.Quantity;
-                        orderInfo.Details.Add(detail);
+                            detail.UnitPrice * (decimal)((100 - detail.Discount) / 100) * detail.Quantity;//todo pn в уровне DAL не должно быть никакой логики. Только считывание данных. Логику либо в хранимку/запрос, либо в слой BLL.
+						orderInfo.Details.Add(detail);
                     }
                 }
 

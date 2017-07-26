@@ -104,7 +104,7 @@
 
                 var command = connection.CreateCommand();
                 command.CommandText = "Delete From Northwind.Orders" +
-                    " Where OrderID > 11077";
+                    " Where OrderID > 11077";//todo pn лучше не хардкодить в запросах по тем же причинам, почему не нужно вообще хардкодить.
                 command.CommandType = CommandType.Text;
                 command.ExecuteNonQuery();
 

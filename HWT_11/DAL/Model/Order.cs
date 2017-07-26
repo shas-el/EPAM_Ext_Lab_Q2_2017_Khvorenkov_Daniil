@@ -2,7 +2,7 @@
 {
     using System;
 
-    public enum OrderStatus
+    public enum OrderStatus //todo pn enum выносим в отдельный файл (всегда!) и у него в конце желательно добавлять "Enum", чтобы в solution explorer сразу было понятно, что за файл.
     {
         New,
         Underway,
