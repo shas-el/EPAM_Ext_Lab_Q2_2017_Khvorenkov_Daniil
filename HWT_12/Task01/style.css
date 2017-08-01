@@ -1,0 +1,15 @@
+.menu {
+    width: 200px;
+    background-color: #FAE198;
+    color: #A13C2F;
+    border: 1px solid black;
+    border-radius: 10px;
+    list-style-type: none;
+    padding: 3px;
+    font-size: 12pt;
+    box-shadow: inset -5px -5px #8C0000;
+}
+
+.menu li {
+    margin: 5px;
+}
