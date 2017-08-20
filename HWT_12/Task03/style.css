@@ -1,13 +1,17 @@
-html, body {
+html,
+body {
     height: 100%;
 }
 
 h1 {
-    color: #5020A0;
+    color: rgb(91, 46, 166);
     text-align: center;
 }
 
-.header, .sidebar, .content, .footer {
+.header,
+.sidebar,
+.content,
+.footer {
     border: 1px solid #000000;
 }
 
@@ -34,18 +38,63 @@ h1 {
     border-bottom: none;
 }
 
+.content-container {
+    padding: 0px 205px;
+}
+
+img {
+    margin: 5px;
+    width: 200px;
+    float: right;
+}
+
+ul {
+    list-style-type: square;
+}
+
+.italic-li {
+    font-style: italic;
+}
+
+.bold-li {
+    font-weight: bold;
+}
+
+.superscript {
+    vertical-align: super;
+    font-size: small;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
 .sidebar {
     width: 200px;
     height: 100%;
     border-top: none;
 }
 
-.sidebar-inner { 
+.sidebar-inner {
     padding: 5px;
 }
 
-.sidebar.left { 
-    float: left; 
+.sidebar.left {
+    float: left;
     border-left: none;
 }
 
@@ -56,7 +105,7 @@ h1 {
     margin-left: 10px;
 }
 
-.sidebar.right { 
+.sidebar.right {
     float: right;
     border-right: none;
 }
