@@ -1,0 +1,23 @@
+.transfer-select {
+    padding: 10px;
+}
+
+select {
+    width: 100px;
+    height: 150px;
+}
+
+select.left {
+    float: left;
+}
+
+.buttons-container {
+    padding: 35px 10px;
+    float: left;
+}
+
+.buttons-container input {
+    width: 40px;
+    height: 20px;
+    display: block;
+}

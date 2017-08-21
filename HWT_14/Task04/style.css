@@ -1,0 +1,30 @@
+.button {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    text-decoration: none;
+    background: #089AC8;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.button.begin {
+    display: block;
+}
+
+.button.prev,
+.button.next {
+    height: 40px;
+}
+
+.timer {
+    background: #089AC8;
+    height: 40px;
+    width: 100px;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
