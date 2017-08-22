@@ -1,3 +1,4 @@
+//todo pn вообще, имелось в виду, что мы не запрашиваем время, а оно захардкожено где-нибудь. И после последней страницы таймер запускается на первой странице.
 var counter;
 
 $(document).ready(function() {
@@ -16,7 +17,7 @@ $(document).ready(function() {
     })
 
     $(".button.start").click(function() {
-        countdown();
+        countdown();//todo pn у тебя таймер ускоряется, если несколько раз нажать на "воспроизвести".
     })
 
     $(".button.reset").click(function() {
