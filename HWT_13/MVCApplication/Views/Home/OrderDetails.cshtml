@@ -1,0 +1,87 @@
+﻿@using MVCApplication.Models;
+@using DAL.Model;
+@model OrderDetailsViewModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Order " + Model.Order.OrderID + "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <h2>Order #@Model.Order.OrderID Details</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">ID: @Model.Order.OrderID</li>
+                    <li class="list-group-item">Customer: @Model.Order.CustomerName</li>
+                    <li class="list-group-item">Employee: @Model.Order.EmployeeFirstName @Model.Order.EmployeeLastName</li>
+                    <li class="list-group-item">
+                        Order Date: @if (Model.Order.OrderDate.HasValue)
+                        {
+                            @Model.Order.OrderDate.Value.ToString("dd.MM.yyyy");
+                        }
+                    </li>
+                    <li class="list-group-item">
+                        Required Date: @if (Model.Order.RequiredDate.HasValue)
+                        {
+                            @Model.Order.RequiredDate.Value.ToString("dd.MM.yyyy");
+                        }
+                    </li>
+                    <li class="list-group-item">
+                        Shipped Date: @if (Model.Order.ShippedDate.HasValue)
+                        {
+                            @Model.Order.ShippedDate.Value.ToString("dd.MM.yyyy")
+                        }
+                    </li>
+                    <li class="list-group-item">Status: @Model.Order.Status</li>
+                    <li class="list-group-item">Ship Via: @Model.Order.ShipperName</li>
+                    <li class="list-group-item">Freight: @Model.Order.Freight.Value.ToString("0.##")</li>
+                    <li class="list-group-item">Ship Name: @Model.Order.ShipName</li>
+                    <li class="list-group-item">Ship Address: @Model.Order.ShipAddress</li>
+                    <li class="list-group-item">Ship City: @Model.Order.ShipCity</li>
+                    <li class="list-group-item">Ship Postal Code: @Model.Order.ShipPostalCode</li>
+                    <li class="list-group-item">Ship Country: @Model.Order.ShipCountry</li>
+                    <li class="list-group-item">Total Cost: @Model.OrderInfo.GetTotalCost().ToString("0.###")</li>
+                </ul>
+                <h4>Products List</h4>
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                            <th>Discount</th>
+                            <th>Sum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (OrderInfoDetail d in Model.OrderInfo.Details)
+                        {
+                            <tr>
+                                <td>@d.ProductName</td>
+                                <td>@d.UnitPrice.ToString("0.##")</td>
+                                <td>@d.Quantity</td>
+                                <td>@d.Discount</td>
+                                <td>@d.ExtendedPrice.ToString("0.###")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+    </div>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

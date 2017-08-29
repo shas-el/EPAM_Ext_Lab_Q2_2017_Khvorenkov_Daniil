@@ -1,0 +1,29 @@
+﻿@using MVCApplication.Models
+@model OrderDetailTemplateViewModel
+
+<div>
+    <input id="OrderDetails_@Model.Index--OrderID" 
+           name="OrderDetails[@Model.Index].OrderID"
+           value="@Model.OrderDetails.OrderID"
+           type="hidden" />
+    <h6>Product:</h6>
+    <select id="OrderDetails_@Model.Index--ProductID"
+            name="OrderDetails[@Model.Index].ProductID">
+        @foreach (var option in Model.AvailableProducts)
+        {
+            <option value="@option.ProductID">@option.ProductName</option>
+        }
+    </select>
+    <h6>Unit Price</h6>
+    <input id="OrderDetails_@Model.Index--UnitPrice"
+           name="OrderDetails[@Model.Index].UnitPrice" 
+           type="text"/>
+    <h6>Quantity</h6>
+    <input id="OrderDetails_@Model.Index--Quantity"
+           name="OrderDetails[@Model.Index].Quantity"
+           type="text" />
+    <h6>Discount</h6>
+    <input id="OrderDetails_@Model.Index--Discount"
+           name="OrderDetails[@Model.Index].Discount"
+           type="text" />
+</div>

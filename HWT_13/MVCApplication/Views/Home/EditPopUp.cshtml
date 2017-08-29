@@ -1,0 +1,101 @@
+﻿@using MVCApplication.Models;
+@model EditViewModel
+
+<link rel="stylesheet" href="~/Content/themes/base/jquery-ui.min.css" />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4>@ViewBag.Title</h4>
+            <button class="close" data-dismiss="modal" area-hidden="true">X</button>
+        </div>
+        <div class="modal-content">
+            @using (Ajax.BeginForm("Edit", "Home", new AjaxOptions()
+            {
+                HttpMethod = "POST"
+            }))
+            {
+                <fieldset>
+                    @Html.HiddenFor(m => m.Order.OrderID)
+                    <h5>Customer:</h5>
+                    @Html.DropDownListFor(m => m.Order.CustomerID, Model.AvailableCustomers)
+                    <h5>Employee:</h5>
+                    @Html.DropDownListFor(m => m.Order.EmployeeID, Model.AvailableEmployees)
+                    <h5>Order Date:</h5>
+                    @Html.TextBoxFor(m => m.Order.OrderDate, new { @class = "date-picker"} )
+                    <h5>Required Date:</h5>
+                    @Html.TextBoxFor(m => m.Order.RequiredDate, new { @class = "date-picker" })
+                    <h5>Shipped Date:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShippedDate, new { @class = "date-picker" })
+                    <h5>Shipper:</h5>
+                    @Html.DropDownListFor(m => m.Order.ShipVia, Model.AvailableShippers)
+                    <h5>Freight:</h5>
+                    @Html.TextBoxFor(m => m.Order.Freight)
+                    <h5>Ship Name:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipName)
+                    <h5>Ship Address:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipAddress)
+                    <h5>Ship City:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipCity)
+                    <h5>Ship Region:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipRegion)
+                    <h5>Ship Postal Code:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipPostalCode)
+                    <h5>Ship Country:</h5>
+                    @Html.TextBoxFor(m => m.Order.ShipCountry)
+                    <h5>Order Details:</h5>
+                    <div id="dynamic-container">
+                        @for (int i = 0; i < Model.OrderDetails.Count; i++)
+                        {
+                            <div>
+                                @Html.HiddenFor(m => m.OrderDetails[i].OrderID)
+                                <h6>Product:</h6>
+                                @{
+                                    SelectList list = new SelectList(Model.AvailableProducts, "ProductID", "ProductName",
+                                        Model.OrderDetails[i].ProductID);
+                                }
+                                @Html.DropDownListFor(m => m.OrderDetails[i].ProductID, 
+                                   list, new {@name="OrderDetails.ProductID"})
+                                <h6>Unit Price:</h6>
+                                @Html.TextBoxFor(m => m.OrderDetails[i].UnitPrice)
+                                <h6>Quantity:</h6>
+                                @Html.TextBoxFor(m => m.OrderDetails[i].Quantity)
+                                <h6>Discount:</h6>
+                                @Html.TextBoxFor(m => m.OrderDetails[i].Discount)
+                            </div>
+                        }
+                    </div>
+                    <div>
+                        <button class="btn btn-sm btn-primary" type="button" id="btn-add-detail">
+                            Add Detail
+                        </button>
+                    </div>
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success" type="submit" id="btn-submit">
+                        Submit
+                    </button>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".date-picker").datepicker();
+    })
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btn-add-detail").on("click", function () {
+            var index = $("#dynamic-container").children().length;
+            $.ajax({
+                url: '@Url.Action("OrderDetailTemplate", "Home")?index=' + index + '&id=' + @Model.Order.OrderID,
+                dataType: 'html',
+                success: function (data) {
+                    $("#dynamic-container").append(data);
+                }
+            });
+        });
+    })
+</script>
