@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace MVCApplication.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller//todo pn лучше переименовать на OrderController
     {
         private NorthwindDAL dal;
 
@@ -23,7 +23,7 @@ namespace MVCApplication.Controllers
             List<OrderExt> orders = dal.GetOrdersExt();
             List<OrderIntroViewModel> orderIntros = new List<OrderIntroViewModel>();
 
-            foreach (OrderExt o in orders)
+            foreach (OrderExt o in orders)//todo pn маппинг полей из доменной модели во вью-модель лучше делать AutoMapper'ом
             {
                 OrderIntroViewModel intro = new OrderIntroViewModel();
                 intro.OrderID = o.OrderID.Value;
@@ -46,7 +46,7 @@ namespace MVCApplication.Controllers
                 orderDetails.OrderInfo = dal.GetOrderInfo(id);
                 return View(orderDetails);
             }
-            catch (Exception e)
+            catch (Exception e)//todo pn зачем ты перекрываешь все исключительные ситуации 404 ошибкой? Так делать нельзя.
             {
                 return HttpNotFound(e.Message);
             }
@@ -58,7 +58,7 @@ namespace MVCApplication.Controllers
 
             if (id == 0)
             {
-                ViewBag.Title = "Create New Order";
+                ViewBag.Title = "Create New Order";//todo pn все строки-наименования в ресурсы
                 editViewModel.Order = new Order();
                 editViewModel.OrderDetails = new List<OrderDetail>();
             }

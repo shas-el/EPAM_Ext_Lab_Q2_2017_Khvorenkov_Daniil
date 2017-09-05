@@ -75,7 +75,7 @@
     <script type="text/javascript">
         function confirmDelete(orderID) {
             $.ajax({
-                url: '/Home/DeletePopUp/' + orderID,
+                url: '/Home/DeletePopUp/' + orderID,//todo pn очень плохо хардкодить url. Используй билдеры для них. Для всех частей, включая ИД.
                 dataType: 'html',
                 success: function (data) {
                     $("#modalWrapper").html(data);
