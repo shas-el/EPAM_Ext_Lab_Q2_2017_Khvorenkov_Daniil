@@ -1,0 +1,25 @@
+﻿@using TextCatalog.UI.Models
+@model TextViewModel
+
+
+@{
+    ViewBag.Title = Model.TextTitle;
+}
+
+<h3>@Model.TextTitle</h3>
+<h5>Descritpion</h5>
+<p>@Model.TextDescription</p>
+<p>Category: @Model.SectionName</p>
+<p>Upload date: @Model.UploadDate.ToString("dd/MM/yyyy")</p>
+<p>Uploader: @Model.UploaderName</p>
+<a href="@Url.Action("Rate", "File"
+        , new { textId = Model.TextId, userName = User.Identity.Name, positive = true, returnUrl = HttpContext.Current.Request.Url })"
+   class="btn btn-outline-success like-button">
+    Like @Model.Likes
+</a>
+<a href="@Url.Action("Rate", "File"
+        , new { textId = Model.TextId, userName = User.Identity.Name, positive = false, returnUrl = HttpContext.Current.Request.Url })"
+   class="btn btn-outline-danger dislike-button">
+    Dislike @Model.Dislikes
+</a>
+<a class="btn" href="#">Download</a>

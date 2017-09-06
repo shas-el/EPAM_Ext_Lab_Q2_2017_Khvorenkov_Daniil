@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Text Catalog</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="#">T!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <div class="navbar-nav">
+                <a class="nav-link nav-item" href="@Url.Action("Index", "Home")">Home</a>
+                <a class="nav-link nav-item" href="@Url.Action("Index", "User")">My page</a>
+                <a class="nav-link nav-item" href="@Url.Action("AdvancedSearch", "Home")">Search</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class="nav-link nav-item" href="@Url.Action("Upload", "File")">Upload</a>
+                }
+            </div>
+            <div class="navbar-nav">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <span class="navbar-text">Welcome, @User.Identity.Name!</span>
+                    <a class="nav-link nav-item" href="@Url.Action("LogOut", "Account")">Log out</a>
+                }
+                else
+                {
+                    <a class="nav-link nav-item" href="@Url.Action("LogIn", "Account")">Log in</a>
+                    <a class="nav-link nav-item" href="@Url.Action("Register", "Account")">Sign up</a>
+                }
+            </div>
+        </div>  
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            Footer Content
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

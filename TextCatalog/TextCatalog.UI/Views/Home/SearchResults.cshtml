@@ -1,0 +1,28 @@
+﻿@using TextCatalog.UI.Models
+@model IEnumerable<TextIntroViewModel>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>Search Results</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Likes</th>
+            <th>Dislikes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model)
+        {
+            <tr>
+                <td class="col-sm-10">@Html.ActionLink(t.TextTitle, "FilePage", "File", new { id = t.TextId }, null)</td>
+                <td class="col-sm-1">@t.Likes</td>
+                <td class="col-sm-1">@t.Dislikes</td>
+            </tr>
+        }
+    </tbody>
+</table>

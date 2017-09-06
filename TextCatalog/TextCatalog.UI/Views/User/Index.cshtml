@@ -1,0 +1,27 @@
+﻿@using TextCatalog.UI.Models
+@model UserViewModel
+
+@{
+    ViewBag.Title = "My Page";
+}
+
+<p>@Model.UserName</p>
+
+<h4>My files</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var t in Model.Texts)
+        {
+            <tr>
+                <td>@Html.ActionLink(t.TextTitle, "FilePage", "File", new { id = t.TextId }, null)</td>
+                <td>@t.TextDescription</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@using TextCatalog.UI.Models
+@model UploadViewModel
+
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+@using (Html.BeginForm("Upload"
+    ,"File"
+    ,FormMethod.Post
+    , new { role="form" }))
+{ 
+    @Html.ValidationSummary()
+    @Html.EditorFor(m => m.TextTitle, new { htmlAttributes = new { @class = "form-control", @placeholder = "Title" } } )
+    @Html.EditorFor(m => m.TextDescription, new { htmlAttributes = new { @class = "form-control", @placeholder = "Description" } } )
+    @Html.DropDownListFor(m => m.SectionId, new SelectList(Model.AvailableSections, "SectionId", "SectionName"))
+    <div>
+        <button type="submit" class="btn">Submit</button>
+    </div>
+}

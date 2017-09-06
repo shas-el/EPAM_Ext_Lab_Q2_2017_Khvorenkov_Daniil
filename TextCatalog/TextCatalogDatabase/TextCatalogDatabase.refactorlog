@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8fc7c6a5-7308-4c04-9e24-e6e7023b1546" ChangeDateTime="09/03/2017 07:56:31">
+    <Property Name="ElementName" Value="[dbo].[Tag].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tag]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TagId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a105fd57-cd59-40b7-b9ef-d6bd98513271" ChangeDateTime="09/03/2017 08:03:27">
+    <Property Name="ElementName" Value="[dbo].[Text].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Text]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TextId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b047bbba-73e2-4648-b2b8-d9138a9d8786" ChangeDateTime="09/03/2017 08:12:19">
+    <Property Name="ElementName" Value="[dbo].[TagText].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TagText]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TagId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b77581a3-d5b6-46fb-b0cd-0229a331b9b5" ChangeDateTime="09/03/2017 08:13:02">
+    <Property Name="ElementName" Value="[dbo].[FK_TagText_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[TagText]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_TagText_ToTag]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="68939697-2f7f-4d2b-96ac-dce8f9089fc6" ChangeDateTime="09/03/2017 08:15:17">
+    <Property Name="ElementName" Value="[dbo].[Section].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Section]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SectionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="01acba99-19c4-4b12-925e-498099719ead" ChangeDateTime="09/03/2017 08:18:01">
+    <Property Name="ElementName" Value="[dbo].[SectionText].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SectionText]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SectionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="966a252a-1356-4963-b4e3-8851f7493b4f" ChangeDateTime="09/03/2017 08:21:53">
+    <Property Name="ElementName" Value="[dbo].[User].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fd5e6583-c0db-4013-8d2b-2b183b3dbaa7" ChangeDateTime="09/03/2017 08:23:00">
+    <Property Name="ElementName" Value="[dbo].[Role].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Role]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RoleId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="90d3fc48-4f18-40fa-be4f-f306f4ce5447" ChangeDateTime="09/03/2017 08:25:04">
+    <Property Name="ElementName" Value="[dbo].[Rating].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Rating]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RatingId" />
+  </Operation>
+</Operations>

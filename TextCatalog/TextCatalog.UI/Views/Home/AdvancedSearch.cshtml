@@ -1,0 +1,23 @@
+﻿@using TextCatalog.UI.Models
+@model SearchQueryViewModel
+
+
+@{
+    ViewBag.Title = "Advanced Search";
+}
+
+@using (Html.BeginForm("SearchResults"
+    , "Home"
+    , FormMethod.Post
+    , new { @role = "form" }))
+{
+    @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class="form-control", @placeholder="Search in title" } })
+    @Html.EditorFor(m => m.Description, new { htmlAttributes = new { @class = "form-control", @placeholder="Search in description" } })
+    @Html.DropDownListFor(m => m.SectionId, new SelectList(Model.AvailableSections, "SectionId", "SectionName"))
+    @Html.ListBoxFor(m => m.TagIds
+        , new SelectList(Model.AvailableTags, "TagId", "TagPresentation"), new { @class = "form-control"})
+    @Html.EditorFor(m => m.BeginDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Begin date" } })
+    @Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "End date" } })
+    @Html.EditorFor(m => m.UploaderName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Uploader name" } })
+    <button type="submit" class="btn">Search</button>
+}

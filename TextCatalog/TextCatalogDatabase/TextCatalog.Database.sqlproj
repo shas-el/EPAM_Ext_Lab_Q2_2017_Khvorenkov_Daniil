@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>TextCatalog.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{45639625-580c-4585-b81e-7caeca147070}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>TextCatalogDatabase</RootNamespace>
+    <AssemblyName>TextCatalogDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="PostDeployment" />
+    <Folder Include="Procedures" />
+    <Folder Include="Procedures\Text" />
+    <Folder Include="Procedures\Tag" />
+    <Folder Include="Procedures\TagCategory" />
+    <Folder Include="Procedures\Section" />
+    <Folder Include="Procedures\Role" />
+    <Folder Include="Procedures\User" />
+    <Folder Include="Procedures\TagToText" />
+    <Folder Include="Procedures\Rating" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\TagCategory.sql" />
+    <Build Include="Tables\Tag.sql" />
+    <Build Include="Tables\Text.sql" />
+    <Build Include="Tables\TagToText.sql" />
+    <Build Include="Tables\Section.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Role.sql" />
+    <Build Include="Tables\Rating.sql" />
+    <Build Include="Procedures\Text\GetTexts.sql" />
+    <Build Include="Procedures\Text\GetTextsByUploader.sql" />
+    <Build Include="Procedures\Tag\GetTagsByCategory.sql" />
+    <Build Include="Procedures\Text\GetTextById.sql" />
+    <Build Include="Procedures\Tag\GetTagById.sql" />
+    <Build Include="Procedures\Text\DeleteText.sql" />
+    <Build Include="Procedures\Text\CreateText.sql" />
+    <Build Include="Procedures\Text\UpdateText.sql" />
+    <Build Include="Procedures\Tag\GetTags.sql" />
+    <Build Include="Procedures\Tag\CreateTag.sql" />
+    <Build Include="Procedures\Tag\UpdateTag.sql" />
+    <Build Include="Procedures\Tag\DeleteTag.sql" />
+    <Build Include="Procedures\TagCategory\CreateTagCategory.sql" />
+    <Build Include="Procedures\TagCategory\GetTagCategories.sql" />
+    <Build Include="Procedures\TagCategory\GetTagCategoryById.sql" />
+    <Build Include="Procedures\TagCategory\UpdateTagCategory.sql" />
+    <Build Include="Procedures\TagCategory\DeleteTagCategory.sql" />
+    <Build Include="Procedures\Section\CreateSection.sql" />
+    <Build Include="Procedures\Section\GetSectionById.sql" />
+    <Build Include="Procedures\Section\GetSections.sql" />
+    <Build Include="Procedures\Section\UpdateSection.sql" />
+    <Build Include="Procedures\Section\DeleteSection.sql" />
+    <Build Include="Procedures\Role\CreateRole.sql" />
+    <Build Include="Procedures\Role\GetRoleById.sql" />
+    <Build Include="Procedures\Role\GetRoles.sql" />
+    <Build Include="Procedures\Role\UpdateRole.sql" />
+    <Build Include="Procedures\Role\DeleteRole.sql" />
+    <Build Include="Procedures\User\DeleteUser.sql" />
+    <Build Include="Procedures\User\CreateUser.sql" />
+    <Build Include="Procedures\User\GetUsers.sql" />
+    <Build Include="Procedures\User\GetUserById.sql" />
+    <Build Include="Procedures\User\UpdateUser.sql" />
+    <Build Include="Procedures\TagToText\CreateTagToText.sql" />
+    <Build Include="Procedures\TagToText\GetTagToTextByTag.sql" />
+    <Build Include="Procedures\TagToText\GetTagToTextByText.sql" />
+    <Build Include="Procedures\TagToText\DeleteTagToText.sql" />
+    <Build Include="Procedures\Rating\CreateRating.sql" />
+    <Build Include="Procedures\Rating\GetRatingsByUser.sql" />
+    <Build Include="Procedures\Rating\GetRatingsByText.sql" />
+    <Build Include="Procedures\Rating\DeleteRating.sql" />
+    <Build Include="Procedures\Section\GetSectionAndDescendants.sql" />
+    <Build Include="Procedures\Tag\GetTextsQuery.sql" />
+    <Build Include="Procedures\Tag\GetTagsByText.sql" />
+    <Build Include="Procedures\Text\GetTextsByTag.sql" />
+    <Build Include="Procedures\Text\GetLikes.sql" />
+    <Build Include="Procedures\Text\GetDislikes.sql" />
+    <Build Include="Procedures\Text\GetTopTwentyTexts.sql" />
+    <Build Include="Procedures\User\GetUserByNamePassword.sql" />
+    <Build Include="Procedures\User\GetUserByName.sql" />
+    <Build Include="Procedures\Section\GetRootSection.sql" />
+    <Build Include="Procedures\Rating\GetRating.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="TextCatalogDatabase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeployment\Data.Role.sql" />
+    <None Include="PostDeployment\Data.User.sql" />
+    <None Include="PostDeployment\Data.TagCategory.sql" />
+    <None Include="PostDeployment\Data.Tag.sql" />
+    <None Include="PostDeployment\Data.Section.sql" />
+    <None Include="PostDeployment\Data.Text.sql" />
+    <None Include="PostDeployment\Data.TagToText.sql" />
+    <None Include="PostDeployment\Data.Rating.sql" />
+    <None Include="TextCatalog.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+</Project>
